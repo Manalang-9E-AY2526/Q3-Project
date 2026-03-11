@@ -1,0 +1,150 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Confirmation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+
+  <style>
+    :root{
+      --accent: #6ad7c9;
+      --muted: #6b7280;
+      --card-bg: rgba(255,255,255,0.92);
+      --text: #0f172a;
+      --bg-photo-url: url('https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?auto=format&fit=crop&w=1650&q=80');
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color:var(--text);
+ 
+      background: #b4edff; 
+      -webkit-font-smoothing:antialiased;
+    }
+
+    
+    nav.navbar{ background: transparent; }
+    nav .container-fluid{ max-width:1200px; margin:0 auto; padding-left:16px; padding-right:16px; }
+
+
+    .page-wrap{
+      position:relative;
+      max-width:1200px;
+      margin:56px auto; 
+      width:100%;
+      padding-left:16px;
+      padding-right:16px;
+    }
+
+   
+    .grid-dots{position:absolute; inset:0; pointer-events:none; z-index:0; opacity:0.45}
+    .grid-dots svg{width:100%;height:100%;display:block}
+
+
+    .card{
+      position:relative; z-index:1;
+      width:min(880px, 92vw);
+      margin: 0 auto; 
+      border-radius:18px;
+      padding:48px 56px;
+      box-shadow: 0 10px 30px rgba(15,23,42,0.08);
+      background: var(--card-bg);
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap:28px;
+      align-items:center;
+    }
+
+    @media (max-width:880px){
+      .card{grid-template-columns:1fr; padding:36px}
+    }
+
+    .left h1{font-size:42px;margin:0 0 12px 0;letter-spacing:-0.02em}
+    .left p{margin:0;color:var(--muted);line-height:1.55}
+
+    .form{display:flex;flex-direction:column;gap:12px}
+    .input-wrap{display:flex;gap:8px}
+    input[type=email]{flex:1;padding:14px 16px;border-radius:10px;border:1px solid rgba(15,23,42,0.06);font-size:14px}
+    button{padding:12px 16px;border-radius:10px;border:none;background:var(--accent);color:white;font-weight:600;cursor:pointer}
+    button:active{transform:translateY(1px)}
+
+    .small{font-size:13px;color:var(--muted);margin-top:8px}
+
+   
+    .site-logo { height:40px; width:auto; border-radius:6px; }
+    .card .logo{display:flex;gap:8px;align-items:center;font-weight:700;color:var(--muted);font-size:14px}
+
+   
+    input:focus, button:focus{outline:3px solid rgba(106,215,201,0.24);outline-offset:2px}
+  </style>
+</head>
+<body class="bg-gradient">
+
+  
+  <nav class="navbar navbar-expand-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="logo.png" class="site-logo" alt="eSakayMo logo">
+        <span style="margin-left:10px;font-weight:600;color:var(--text)">eSakayMo</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-sm-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="farematrix.html">Fare Matrix</a></li>
+          <li class="nav-item"><a class="nav-link" href="schedule.html">Schedule</a></li>
+          <li class="nav-item"><a class="nav-link" href="help.html">Help</a></li>
+          <li class="nav-item"><a class="nav-link" href="registration.html">Create Account</a></li>
+        </ul>
+
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="text" placeholder="Search">
+          <button class="btn btn-primary" type="button">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  
+  <div class="page-wrap">
+
+    <div class="grid-dots" aria-hidden="true">
+      <svg preserveAspectRatio="none" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="p" width="6" height="6" patternUnits="userSpaceOnUse">
+            <circle cx="1" cy="1" r="0.8" fill="rgba(15,23,42,0.05)" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#p)"></rect>
+      </svg>
+    </div>
+
+    <main class="card" role="region" aria-label="confirmation">
+      <section class="left">
+        <div class="logo" style="margin-bottom:18px">
+          <img src="logo.png" class="site-logo" alt="eSakay small logo" style="height:36px">
+          <span>eSakay Mo MRT-3</span>
+        </div>
+
+        <h1>Thank you!</h1>
+        <p>eSakay Mo is always happy to help!</p>
+     
+
+     </div>
+
+
+
+</body>
+</html>
