@@ -1,36 +1,36 @@
-var basefare = 50;
+// BASE FARE STUFF
+var basefare = 50;   // FIRST 2 KM COST
+var perKMrate = 15;  // EXTRA KM COST
+var baseKM = 2;      // KM INCLUDED IN BASE FARE
 
-var perKMrate = 15;
+// FUNCTION TO CALCULATE FARE
+function calculateFare() {
+    // GET PICKUP AND DROPOFF VALUES (NUMBERS)
+    var pickup = parseInt(document.getElementById("pickup").value);
+    var dropoff = parseInt(document.getElementById("dropoff").value);
 
-var baseKM = 2;
+    // GET PASSENGER TYPE
+    var type = document.getElementById("discount").value;
 
-function calculateFare(){
-	var pickup = document.getElementById("pickup").value;
-	var dropoff = document.getElementById("dropoff").value;
-	var type = document.getElementById("discount").value;
-	var distance = Math.abs(dropoff - pickup);
-	var fare;
-	if(distance <= baseKM){
+    // DISTANCE BETWEEN STATIONS
+    var distance = Math.abs(dropoff - pickup);
+    var fare; // JUST DECLARING IT HERE
 
-		fare = basefare;
-	}
+    // CALCULATE FARE BASED ON DISTANCE
+    if(distance <= baseKM) {
+        fare = basefare; // WITHIN BASE KM, JUST BASE FARE
+    } else {
+        fare = basefare + ((distance - baseKM) * perKMrate); // ADD EXTRA KM FARE
+    }
 
-	else{
+    // APPLY DISCOUNT IF APPLICABLE
+    if(type == "student" || type == "senior" || type == "pwd") {
+        fare = fare * 0.8; // 20% OFF
+    }
 
-		fare = basefare + ((distance - baseKM) * perKMrate);
+    // ROUND TO 2 DECIMALS
+    fare = fare.toFixed(2);
 
-	}
-
-	if(type == "student" || type == "senior" || type == "pwd"){
-
-		fare = fare * 0.8;
-
-	}
-
-
-	fare = fare.toFixed(2);
-
-	document.getElementById("fareOutput").innerHTML =
-	"Fare: ₱ " + fare;
-
+    // SHOW FARE ON PAGE
+    document.getElementById("fareOutput").innerHTML = "Fare: ₱ " + fare;
 }
