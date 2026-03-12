@@ -1,69 +1,103 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>eSakayMo Help Page</title>
+	<title>Help</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- BOOTSTRAP -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+	<!-- BOOTSTRAP -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+	<!-- CSS -->
+	<link rel="stylesheet" href="style.css">
 	<!-- GOOGLE FONTS -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-sm">
+
 	<div class="container-fluid">
-
-		<a class="navbar-brand" href="index.html">
-			<img src="logo.png" height="50">
-			eSakayMo
+	<!-- LOGO-->
+		<a class="navbar-brand d-flex align-items-center" href="index.html">
+			<img src="logo.png" height="40">
+			<span class="ms-2" id="logo">eSakayMo</span>
 		</a>
-
+	<!-- MENU -->
 		<ul class="navbar-nav mx-auto">
-			<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-			<li class="nav-item"><a class="nav-link" href="farematrix.html">Fare Matrix</a></li>
-			<li class="nav-item"><a class="nav-link" href="schedule.html">Schedule</a></li>
-			<li class="nav-item"><a class="nav-link" href="help.html">Help</a></li>
-			<li class="nav-item"><a class="nav-link" href="registration.html">Create Account</a></li>
+
+			<li class="nav-item">
+				<a class="nav-link" href="index.html">Home</a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link" href="farematrix.html">Fare Matrix</a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link" href="schedule.html">Schedule</a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link" href="help.html">Help</a>
+			</li>
+
 		</ul>
 
-		<form class="d-flex">
-			<input class="form-control me-2" type="text" placeholder="Search">
-			<button class="btn btn-primary" type="button">Search</button>
-		</form>
+		<a href="registration.html" class="btn btn-primary">
+			Register
+		</a>
 
 	</div>
 </nav>
 
-<!-- HELP -->
+
+<!-- CONTENT -->
 <div class="container mt-5">
+	<!-- FARE MATRIX -->
+	<div class="card p-4 mt-4" id="help">
+		<h1 class="text-center">How to Use the Fare Matrix</h1>
 
-	<h1 class="text-center">Help</h1>
+		<ol class="mt-2">
 
-	<p class="text-center">
-		This website helps users estimate MRT-3 fares quickly.
-	</p>
+			<li>Select your pickup station.</li>
 
-	<div class="mt-4">
+			<li>Select your destination station.</li>
 
-		<h4>How to use the Fare Calculator</h4>
+			<li>Click the calculate button.</li>
 
-		<ol>
-			<li>Enter the travel distance in kilometers.</li>
-			<li>Select the passenger type.</li>
-			<li>Click "Calculate Fare".</li>
-			<li>The estimated fare will appear.</li>
+			<li>The system will compute your MRT-3 fare automatically.</li>
+
+			<li>You may also apply discounts applicable to you.</li>
+
 		</ol>
 
+			<a href="farematrix.html" class="btn btn-primary">
+				Try it out
+			</a>
 	</div>
+    <!-- ACCOUNT -->
+		<div class="card p-4 mt-4" id="help">
+			<h1 class="text-center">How to Create an Account</h1>
+
+			<ol class="mt-2">
+				<li><strong>Go to the Registration Page:</strong> Click the Register button in the header.</li>
+				<li><strong>Fill in Your Details:</strong> Enter your full name, email, and create a secure password.</li>
+				<li><strong>Upload a Profile Picture (Optional):</strong> Use the <em>Choose File</em> button to select a picture from your device.</li>
+				<li><strong>Agree to Terms:</strong> Make sure to check the box agreeing to our terms and conditions.</li>
+				<li><strong>Submit:</strong> Click the <em>Register</em> button at the bottom of the form.</li>
+				<li><strong>Confirmation:</strong> You will see a confirmation message. You can now log in using your email and password.</li>
+			</ol>
+
+			<a href="registration.html" class="btn btn-primary mt-3">
+				Register
+			</a>
+		</div>
+
 </div>
+
 
 <!-- FOOTER -->
 <footer class="text-center mt-5 p-3">
@@ -75,8 +109,7 @@
 		</a>
 	</p>
 </footer>
+
+
 </body>
 </html>
-
-
-
